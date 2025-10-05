@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Télécharger - Script Converter{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-upload"></i> Télécharger un Script Python
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" id="uploadForm">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Sélectionner un fichier Python</label>
+                        <input type="file" class="form-control" id="file" name="file" 
+                               accept=".py,.pyw" required>
+                        <div class="form-text">
+                            Formats supportés: .py, .pyw (max 50MB)
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="progress" style="height: 3px; display: none;" id="uploadProgress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="uploadBtn">
+                        <i class="fas fa-upload"></i> Télécharger et Analyser
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Aide -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="fas fa-info-circle"></i> Guide d'utilisation
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Étapes de conversion:</h6>
+                        <ol class="small">
+                            <li>Téléchargez votre script Python</li>
+                            <li>Configurez les options du projet</li>
+                            <li>Prévisualisez le code GUI généré</li>
+                            <li>Construisez l'exécutable</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Frameworks supportés:</h6>
+                        <ul class="small">
+                            <li><strong>Tkinter:</strong> Interface native Python</li>
+                            <li><strong>PyQt5/6:</strong> Interface moderne</li>
+                            <li><strong>Flask:</strong> Application web</li>
+                            <li><strong>Console:</strong> Interface texte</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('uploadForm').addEventListener('submit', function(e) {
+    const btn = document.getElementById('uploadBtn');
+    const progress = document.getElementById('uploadProgress');
+    
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Téléchargement...';
+    progress.style.display = 'block';
+    
+    // Simulation de progression (la vraie progression nécessiterait AJAX)
+    let width = 0;
+    const interval = setInterval(() => {
+        width += 10;
+        progress.querySelector('.progress-bar').style.width = width + '%';
+        if (width >= 90) clearInterval(interval);
+    }, 100);
+});
+</script>
+{% endblock %}

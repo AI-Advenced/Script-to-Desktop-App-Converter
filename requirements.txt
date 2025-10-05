@@ -1,0 +1,10 @@
+# Requirements pour Script to Desktop App Converter
+Flask==2.3.2
+Werkzeug==2.3.6
+requests==2.31.0
+pyinstaller==5.13.2
+
+# Pour l'interface graphique Tkinter (inclus dans Python par défaut)
+# Optionnel pour PyQt5/6
+# PyQt5==5.15.9
+# PyQt6==6.5.2

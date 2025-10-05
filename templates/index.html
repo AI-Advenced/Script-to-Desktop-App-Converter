@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil - Script Converter{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="jumbotron bg-light p-5 rounded mb-4">
+            <h1 class="display-4">
+                <i class="fas fa-magic text-primary"></i>
+                Script to Desktop App
+            </h1>
+            <p class="lead">
+                Convertissez facilement vos scripts Python en applications de bureau avec interface graphique.
+            </p>
+            <hr class="my-4">
+            <p>
+                Supportés: Tkinter, PyQt5/6, Flask, Console. Construction automatique d'exécutables avec PyInstaller.
+            </p>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('upload_file') }}">
+                <i class="fas fa-rocket"></i> Commencer
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Projets récents -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="fas fa-folder"></i> Projets Récents
+                </h5>
+                <a href="{{ url_for('upload_file') }}" class="btn btn-outline-primary btn-sm">
+                    <i class="fas fa-plus"></i> Nouveau Projet
+                </a>
+            </div>
+            <div class="card-body">
+                {% if projects %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Créé le</th>
+                                    <th>Modifié le</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for project in projects[:10] %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ project.name }}</strong>
+                                    </td>
+                                    <td>{{ project.created_at[:19] }}</td>
+                                    <td>{{ project.updated_at[:19] }}</td>
+                                    <td>
+                                        <a href="{{ url_for('project_config', name=project.name) }}" 
+                                           class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-edit"></i> Configurer
+                                        </a>
+                                        <form method="post" action="{{ url_for('delete_project', name=project.name) }}" 
+                                              class="d-inline" 
+                                              onsubmit="return confirm('Supprimer ce projet?')">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="text-center py-4">
+                        <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+                        <h5 class="text-muted">Aucun projet trouvé</h5>
+                        <p class="text-muted">Commencez par télécharger un script Python.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
