@@ -49,7 +49,7 @@ A powerful and automatic converter that transforms your Python scripts into full
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/script-to-desktop-converter.git
+git clone https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/script-to-desktop-app-converter.git
 cd script-to-desktop-converter
 
 # Install dependencies
@@ -110,13 +110,13 @@ python Script_to_code_DesktopApp_and_to_exe.py my_script.py \
 
 | Document                                        | Description                     |
 | ----------------------------------------------- | ------------------------------- |
-| [Installation Guide](docs/INSTALLATION.md)      | Detailed installation and setup |
-| [Usage Guide](docs/HOW_TO_USE.md)               | Step-by-step tutorials          |
-| [Script Creation](docs/HOW_TO_CREATE_SCRIPT.md) | Best practices for your scripts |
-| [Framework Guide](docs/FRAMEWORKS.md)           | Supported GUI frameworks        |
-| [API and CLI](docs/API_CLI.md)                  | Full reference of commands      |
-| [Troubleshooting](docs/TROUBLESHOOTING.md)      | Solutions for common issues     |
-| [Examples](examples/)                           | Sample scripts and use cases    |
+| [Installation Guide](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/docs/INSTALLATION.md)      | Detailed installation and setup |
+| [Usage Guide](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/docs/HOW_TO_USE.md)               | Step-by-step tutorials          |
+| [Script Creation](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/docs/HOW_TO_CREATE_SCRIPT.md) | Best practices for your scripts |
+| [Framework Guide](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/docs/FRAMEWORKS.md)           | Supported GUI frameworks        |
+| [API and CLI](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/docs/API_CLI.md)                  | Full reference of commands      |
+| [Troubleshooting](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/docs/TROUBLESHOOTING.md)      | Solutions for common issues     |
+| [Examples](https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/examples/)                           | Sample scripts and use cases    |
 
 ## 🏗️ Architecture
 
