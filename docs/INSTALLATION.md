@@ -72,7 +72,7 @@ numpy>=1.21.0     # Calcul numérique
 python --version
 
 # 2. Télécharger le projet
-git clone https://github.com/votre-username/script-to-desktop-converter.git
+git clone https://github.com/AI-Advenced/Script-to-Desktop-App-Converter/script-to-desktop-converter.git
 cd script-to-desktop-converter
 
 # 3. Installer les dépendances
